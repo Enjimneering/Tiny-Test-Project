@@ -1,6 +1,9 @@
 # SPDX-FileCopyrightText: © 2024 Tiny Tapeout
 # SPDX-License-Identifier: MIT
 
+# SPDX-FileCopyrightText: © 2024 Tiny Tapeout
+# SPDX-License-Identifier: MIT
+
 import cocotb
 from cocotb.clock import Clock
 from cocotb.triggers import ClockCycles
@@ -32,13 +35,7 @@ async def test_project(dut):
         assert dut.uo_value == expected[i]
 
     dut._log.info("Test Complete")
-
-        
-        dut.ui_in.value = i
-        assert dut.uo_value == expected[i]
-
-    dut._log.info("Test Complete")
-
+  
     # The following assersion is just an example of how to check the output values.
     # Change it to match the actual expected output of your module:
    
