@@ -5,6 +5,7 @@ import cocotb
 from cocotb.clock import Clock
 from cocotb.triggers import ClockCycles
 
+expected = {0,1,1,2,1,2,2,3}
 
 @cocotb.test()
 async def test_project(dut):
@@ -25,9 +26,14 @@ async def test_project(dut):
 
     dut._log.info("Test project behavior")
 
+    for i in range(8):
+        dut.ui_in.value = i
+        assert dut.uo_value == expected[i]
+
+    dut._log.info("Test Complete")
+
     # The following assersion is just an example of how to check the output values.
     # Change it to match the actual expected output of your module:
-    assert dut.uo_out.value == 2
-
+   
     # Keep testing the module by changing the input values, waiting for
     # one or more clock cycles, and asserting the expected output values.
