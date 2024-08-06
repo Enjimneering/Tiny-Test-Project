@@ -27,6 +27,13 @@ async def test_project(dut):
     dut._log.info("Test project behavior")
 
     for i in range(8):
+        await ClockCycles(dut.clk, 1)
+        dut.ui_in.value = i
+        assert dut.uo_value == expected[i]
+
+    dut._log.info("Test Complete")
+
+        
         dut.ui_in.value = i
         assert dut.uo_value == expected[i]
 
