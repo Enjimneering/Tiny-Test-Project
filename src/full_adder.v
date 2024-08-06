@@ -10,8 +10,7 @@ module FullAdder(a,b,c, sum, carry);
     
     //Implimentation
     assign sum = (a^b)^ c;
-    assign carry = (((a^b)&c) | (a&b));
+    assign carry = (((a^b)&c) | (a&b)); // Use | for Or Not +
 
 endmodule
-
 
