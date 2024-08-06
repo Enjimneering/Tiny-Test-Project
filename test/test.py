@@ -8,7 +8,7 @@ import cocotb
 from cocotb.clock import Clock
 from cocotb.triggers import ClockCycles
 
-expected = {0,1,1,2,1,2,2,3}
+expected = [0,1,1,2,1,2,2,3]
 
 @cocotb.test()
 async def test_project(dut):
